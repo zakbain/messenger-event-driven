@@ -6,3 +6,4 @@ The following guides are very helpful
 - https://arctype.com/blog/kafka-tutorial-1/
 - https://docs.confluent.io/home/connect/self-managed/extending.html
 - https://www.confluent.io/blog/kafka-elasticsearch-connector-tutorial/
+- https://github.com/confluentinc/cp-all-in-one/blob/7.1.2-post/cp-all-in-one/docker-compose.yml
