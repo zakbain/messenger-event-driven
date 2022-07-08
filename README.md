@@ -12,6 +12,12 @@ Check swagger for REST API - http://localhost:3000/api
 $ yarn install
 ```
 
+##  Run saved migrations
+```bash
+$ yarn build
+$ yarn migration:run 
+```
+
 ## Running the app
 
 ```bash
@@ -41,18 +47,11 @@ $ yarn test:e2e
 $ yarn test:cov
 ```
 
-## Migrations
+## Create new migration
 ```bash
-# Create new migration (because you updated/created an entity)
+# Only do this if you updated/created an entity
 $ yarn migration:generate src/database/migrations/{MIGRATION_NAME}
-
-# Run existing migrations
-$ yarn build
-$ yarn migration:run 
 ```
-For my other projects, I generally add this to the package.json to make things easier.
-
-
 
 # messenger-event-driven
 Event Driven messenger arch
