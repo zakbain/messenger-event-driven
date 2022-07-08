@@ -12,7 +12,9 @@ export const postgresConfig: PostgresConnectionOptions = {
   database: process.env.DB_NAME,
   entities: entities,
   synchronize: false,
-  migrations: ['src/database/migrations/*.ts']
+  migrations: [
+      "dist/database/migrations/*.{ts,js}"
+  ],
 }
 
 const datasource = new DataSource(postgresConfig);

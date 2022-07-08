@@ -1,3 +1,10 @@
+## Requirements of system
+1. Basic user CRUD (no delete)
+2. Basic message CRUD (no delete)
+3. Get messages between two users
+4. Search for word in messages
+
+Check swagger for REST API - http://localhost:3000/api
 
 ## Installation
 
@@ -8,15 +15,14 @@ $ yarn install
 ## Running the app
 
 ```bash
-# development
 $ yarn start
-
-# watch mode
-$ yarn start:dev
-
-# production mode
-$ yarn start:prod
 ```
+
+Navigate to http://localhost:3000/api for swagger documentation
+
+## Seed data
+Make sure server is running (yarn start)
+Run script seed-data.sh ../.env
 
 ## Test
 
@@ -33,11 +39,12 @@ $ yarn test:cov
 
 ## Migrations
 ```bash
-# Run existing migrations
-$  yarn migration:generate src/database/migrations/{MIGRATION_NAME}
+# Create new migration (because you updated/created an entity)
+$ yarn migration:generate src/database/migrations/{MIGRATION_NAME}
 
-# Create new migrations
-$  yarn typeorm migration:generate -n -d src/database/data-source.ts src/database/migrations/{MIGRATION_NAME} 
+# Run existing migrations
+$ yarn build
+$ yarn migration:run 
 ```
 For my other projects, I generally add this to the package.json to make things easier.
 
