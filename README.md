@@ -23,8 +23,8 @@ Navigate to http://localhost:3000/api for swagger documentation
 ## Seed data
 Make sure server is running (yarn start)
 ```bash
-seed-users.sh
-seed-messages.sh <userId1> <userId2>
+./scripts/seed-users.sh
+./scripts/seed-messages.sh <userId1> <userId2>
 ```
 Note: Replace userId1 and userId2 with the user ids returned from seed-users.sh
 
