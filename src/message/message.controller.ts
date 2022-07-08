@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, Query } from '@nestjs/common';
 import { CreateMessageDto, MessageService } from './message.service';
 
 @Controller('messages')
@@ -10,8 +10,17 @@ export class MessageController {
     return this.messageService.getAll();
   }
 
+  @Get('history')
+  async getMessageHistory(@Query() query: any) {
+    const userIds = query.id as number[];
+    if (userIds.length != 2) {
+      throw new HttpException('expected 2 ids', HttpStatus.BAD_REQUEST);
+    } 
+    return await this.messageService.getBetween(userIds[0], userIds[1]);
+  }
+
   @Get(':id')
-  getById(id: number) {
+  getById(@Param('id') id: number) {
     return this.messageService.getById(id);
   }
 

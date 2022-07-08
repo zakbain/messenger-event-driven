@@ -20,8 +20,8 @@ export class Message {
   content: string;
 
   @CreateDateColumn({type: 'timestamp'})
-  createdAt: string;
+  createdAt: Date;
 
   @Column({ type: "timestamp", nullable: true })
-  readAt?: string;
+  readAt?: Date;
 }

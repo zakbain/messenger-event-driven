@@ -20,6 +20,16 @@ export class MessageService {
     return await this.messageRepository.findOneBy({ id });
   }
 
+  async getBetween(firstUserId: number, secondUserId: number) {
+    const messagesBetweenUsers = await this.messageRepository.find({
+      where: [
+        { sourceUserId: firstUserId, destUserId: secondUserId },
+        { sourceUserId: secondUserId, destUserId: firstUserId }
+      ]
+    });
+    return messagesBetweenUsers.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
+  }
+
   async create(createUserDto: CreateMessageDto) {
     const userToCreate = this.messageRepository.create(createUserDto);
     return await this.messageRepository.save(userToCreate);
