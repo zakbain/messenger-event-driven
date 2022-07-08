@@ -20,7 +20,7 @@ export class UserService {
     return await this.userRepository.findOneBy({ id });
   }
 
-  async createUser(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUserDto) {
     const userToCreate = this.userRepository.create(createUserDto);
     return await this.userRepository.save(userToCreate);
   }

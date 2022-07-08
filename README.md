@@ -15,14 +15,18 @@ $ yarn install
 ## Running the app
 
 ```bash
-$ yarn start
+$ yarn start:dev
 ```
 
 Navigate to http://localhost:3000/api for swagger documentation
 
 ## Seed data
 Make sure server is running (yarn start)
-Run script seed-data.sh ../.env
+```bash
+seed-users.sh
+seed-messages.sh <userId1> <userId2>
+```
+Note: Replace userId1 and userId2 with the user ids returned from seed-users.sh
 
 ## Test
 

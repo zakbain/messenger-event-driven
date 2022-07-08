@@ -4,7 +4,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm"
 
-@Entity()
+@Entity({name: 'user'})
 export class User {
   @PrimaryGeneratedColumn('increment', { type: 'bigint' })
   id: number;
