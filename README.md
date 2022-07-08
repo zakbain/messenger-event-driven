@@ -6,10 +6,11 @@
 
 Check swagger for REST API - http://localhost:3000/api
 
-## Installation
+## Installation & Docker start
 
 ```bash
 $ yarn install
+$ docker-compose up -d
 ```
 
 ##  Run saved migrations
