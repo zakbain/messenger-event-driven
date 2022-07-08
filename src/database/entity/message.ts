@@ -7,11 +7,14 @@ import {
 @Entity()
 export class Message {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @Column("int")
-  sourceUserId: number
+  sourceUserId: number;
 
   @Column("int")
-  destUserId: number
+  destUserId: number;
+
+  @Column("varchar")
+  content: string;
 }
